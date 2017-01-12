@@ -13,13 +13,14 @@ RUN echo "OS dependencies" && \
     service mysqld start && \
     echo "Supervisord dependencies" && \
     yum install python27 && \
-    curl https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py | /usr/bin/python27 && \
+    curl https://bootstrap.pypa.io/ez_setup.py | /usr/bin/python27 && \
     easy_install pip && \
     echo "alias python='python27'" >> ~/.bashrc && \
     source ~/.bashrc && \
     pip install pip --upgrade && \
-    pip install supervisor && \
-    echo "Directory setup" && \
+    pip install supervisor
+
+RUN echo "Directory setup" && \
     mkdir -p /home/develop/logs && \
     mkdir -p /home/develop/apps/htdocs && \
     mkdir -p /etc/httpd/certs
