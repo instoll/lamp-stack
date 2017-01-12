@@ -2,7 +2,9 @@
 
 ## Next
 
-- Bugfix: Wrong ez_setup path specified
+## 0.2.0
+
+- Bugfix: Wrong ez_setup URL specified
 
 ## 0.1.0
 
