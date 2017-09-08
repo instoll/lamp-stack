@@ -2,6 +2,11 @@
 
 ## Next
 
+## 0.5.0
+
+- Feature: Upgraded amazonlinux to 2017.03.0.20170812
+- Feature: Upgraded PHP from 7.0 to 7.1
+
 ## 0.4.0
 
 - Feature: Installed PHP Composer and NodeJS

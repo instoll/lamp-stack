@@ -1,4 +1,4 @@
-FROM amazonlinux:2016.09.1.20161221
+FROM amazonlinux:2017.03.0.20170812
 
 RUN echo "OS dependencies" && \
     yum -y install vim-enhanced bash-completion unzip && \
@@ -21,7 +21,7 @@ RUN echo "MySQL dependencies" && \
     service mysqld start
 
 RUN echo "PHP dependencies" && \
-    yum install -y  php70 php70-mysqlnd php70-cli php70-pdo php70-mbstring php70-gd php70-intl php70-json php70-opcache php70-mcrypt php70-zip && \
+    yum install -y  php71 php71-mysqlnd php71-cli php71-pdo php71-mbstring php71-gd php71-intl php71-json php71-opcache php71-mcrypt php71-zip && \
     echo "Install composer" && \
     curl -sS https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer
