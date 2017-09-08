@@ -2,6 +2,8 @@
 
 ## Next
 
+- Feature: Installed PHP Composer and NodeJS
+
 ## 0.3.0
 
 - Feature: php関連のパッケージを変更し、RUNコマンドを複数に分けた。 
