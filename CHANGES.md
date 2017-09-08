@@ -2,6 +2,8 @@
 
 ## Next
 
+## 0.4.0
+
 - Feature: Installed PHP Composer and NodeJS
 
 ## 0.3.0
