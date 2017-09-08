@@ -1,4 +1,4 @@
-FROM amazonlinux:2016.09.1.20161221
+FROM amazonlinux:2017.03.0.20170812
 
 RUN echo "OS dependencies" && \
     yum -y install vim-enhanced bash-completion unzip && \
