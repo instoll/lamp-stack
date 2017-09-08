@@ -2,6 +2,8 @@
 
 ## Next
 
+- Feature: Upgraded PHP from 7.0 to 7.1
+
 ## 0.4.0
 
 - Feature: Installed PHP Composer and NodeJS
