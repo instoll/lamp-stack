@@ -21,7 +21,15 @@ RUN echo "MySQL dependencies" && \
     service mysqld start
 
 RUN echo "PHP dependencies" && \
-    yum install -y  php70 php70-mysqlnd php70-cli php70-pdo php70-mbstring php70-gd php70-intl php70-json php70-opcache php70-mcrypt php70-zip
+    yum install -y  php70 php70-mysqlnd php70-cli php70-pdo php70-mbstring php70-gd php70-intl php70-json php70-opcache php70-mcrypt php70-zip && \
+    echo "Install composer" && \
+    curl -sS https://getcomposer.org/installer | php && \
+    mv composer.phar /usr/local/bin/composer
+
+RUN echo "NodeJS dependencies" && \
+    yum -y install git && \
+    curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - && \
+    yum -y install nodejs npm
 
 RUN echo "Directory setup" && \
     mkdir -p /home/develop/logs && \
