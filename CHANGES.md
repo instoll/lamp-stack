@@ -2,6 +2,10 @@
 
 ## Next
 
+## 0.6.0
+
+- Feature: Add prestissimo to speed up Composer installation
+
 ## 0.5.0
 
 - Feature: Upgraded amazonlinux to 2017.03.0.20170812
