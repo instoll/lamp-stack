@@ -4,7 +4,7 @@ RUN echo "OS dependencies" && \
     yum -y install vim-enhanced bash-completion unzip && \
     echo "NETWORKING=yes" > /etc/sysconfig/network && \
     echo "Supervisord dependencies" && \
-    yum install python27 && \
+    yum -y install python27 && \
     curl https://bootstrap.pypa.io/ez_setup.py | /usr/bin/python27 && \
     easy_install pip && \
     echo "alias python='python27'" >> ~/.bashrc && \
@@ -24,7 +24,9 @@ RUN echo "PHP dependencies" && \
     yum install -y  php71 php71-mysqlnd php71-cli php71-pdo php71-mbstring php71-gd php71-intl php71-json php71-opcache php71-mcrypt php71-zip && \
     echo "Install composer" && \
     curl -sS https://getcomposer.org/installer | php && \
-    mv composer.phar /usr/local/bin/composer
+    mv composer.phar /usr/local/bin/composer && \
+    echo "Install prestissimo to speed up composer installation" && \
+    composer global require hirak/prestissimo
 
 RUN echo "NodeJS dependencies" && \
     yum -y install git && \
