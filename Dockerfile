@@ -21,7 +21,7 @@ RUN echo "MySQL dependencies" && \
     service mysqld start
 
 RUN echo "PHP dependencies" && \
-    yum install -y  php71 php71-mysqlnd php71-cli php71-pdo php71-mbstring php71-gd php71-intl php71-json php71-opcache php71-mcrypt php71-zip && \
+    yum install -y  php71 php71-mysqlnd php71-cli php71-pdo php71-mbstring php71-gd php71-intl php71-json php71-opcache php71-mcrypt php71-zip php71-pecl-redis && \
     echo "Install composer" && \
     curl -sS https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer && \
