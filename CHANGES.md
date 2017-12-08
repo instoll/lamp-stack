@@ -2,6 +2,10 @@
 
 ## Next
 
+## 0.7.0
+
+- Feature: Added php71-pecl-redis
+
 ## 0.6.0
 
 - Feature: Add prestissimo to speed up Composer installation
