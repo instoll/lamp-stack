@@ -2,6 +2,10 @@
 
 ## Next
 
+## 0.9.0
+
+- Feature: Upgraded amazonlinux to amazonlinux:2017.09
+
 ## 0.8.0
 
 - Refactor: Reduced RUN command to reduce layers
