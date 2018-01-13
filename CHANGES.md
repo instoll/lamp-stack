@@ -2,6 +2,11 @@
 
 ## Next
 
+## 0.8.0
+
+- Refactor: Reduced RUN command to reduce layers
+- Feature: Added php71-dbg
+
 ## 0.7.0
 
 - Feature: Added php71-pecl-redis

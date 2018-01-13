@@ -1,7 +1,9 @@
 FROM amazonlinux:2017.03.0.20170812
 
 RUN echo "OS dependencies" && \
-    yum -y install vim-enhanced bash-completion unzip && \
+    yum -y install \
+      git \
+      unzip && \
     echo "NETWORKING=yes" > /etc/sysconfig/network && \
     echo "Supervisord dependencies" && \
     yum -y install python27 && \
@@ -10,30 +12,41 @@ RUN echo "OS dependencies" && \
     echo "alias python='python27'" >> ~/.bashrc && \
     source ~/.bashrc && \
     pip install pip --upgrade && \
-    pip install supervisor
-
-RUN echo "Apache dependencies" && \
-    yum -y install httpd24 mod24_ssl
-
-RUN echo "MySQL dependencies" && \
-    yum -y install mysql mysql-server && \
+    pip install supervisor && \
+    echo "Apache and MySQL dependencies" && \
+    yum -y install \
+      httpd24 \
+      mod24_ssl \
+      mysql \
+      mysql-server && \
     echo "Start mysqld to create initial tables" && \
-    service mysqld start
-
-RUN echo "PHP dependencies" && \
-    yum install -y  php71 php71-mysqlnd php71-cli php71-pdo php71-mbstring php71-gd php71-intl php71-json php71-opcache php71-mcrypt php71-zip php71-pecl-redis && \
+    service mysqld start && \
+    echo "PHP dependencies" && \
+    yum install -y \
+      php71 \
+      php71-cli \
+      php71-dbg \
+      php71-gd \
+      php71-intl \
+      php71-json \
+      php71-mbstring \
+      php71-mcrypt \
+      php71-mysqlnd \
+      php71-opcache \
+      php71-pdo \
+      php71-pecl-redis \
+      php71-zip && \
     echo "Install composer" && \
     curl -sS https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer && \
     echo "Install prestissimo to speed up composer installation" && \
-    composer global require hirak/prestissimo
-
-RUN echo "NodeJS dependencies" && \
-    yum -y install git && \
+    composer global require hirak/prestissimo && \
+    echo "NodeJS dependencies" && \
     curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - && \
-    yum -y install nodejs npm
-
-RUN echo "Directory setup" && \
+    yum -y install \
+      nodejs \
+      npm && \
+    echo "Directory setup" && \
     mkdir -p /home/develop/logs && \
     mkdir -p /home/develop/apps/htdocs && \
     mkdir -p /etc/httpd/certs
