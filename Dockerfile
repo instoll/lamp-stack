@@ -1,4 +1,4 @@
-FROM amazonlinux:2017.03.0.20170812
+FROM amazonlinux:2017.09
 
 RUN echo "OS dependencies" && \
     yum -y install \
@@ -6,12 +6,8 @@ RUN echo "OS dependencies" && \
       unzip && \
     echo "NETWORKING=yes" > /etc/sysconfig/network && \
     echo "Supervisord dependencies" && \
-    yum -y install python27 && \
-    curl https://bootstrap.pypa.io/ez_setup.py | /usr/bin/python27 && \
+    curl https://bootstrap.pypa.io/ez_setup.py | /usr/bin/python && \
     easy_install pip && \
-    echo "alias python='python27'" >> ~/.bashrc && \
-    source ~/.bashrc && \
-    pip install pip --upgrade && \
     pip install supervisor && \
     echo "Apache and MySQL dependencies" && \
     yum -y install \
