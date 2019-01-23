@@ -2,6 +2,10 @@
 
 ## Next
 
+## 0.10.0
+
+- Feature: Upgraded NodeJS to 9.x
+
 ## 0.9.0
 
 - Feature: Upgraded amazonlinux to amazonlinux:2017.09
