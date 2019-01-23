@@ -38,7 +38,7 @@ RUN echo "OS dependencies" && \
     echo "Install prestissimo to speed up composer installation" && \
     composer global require hirak/prestissimo && \
     echo "NodeJS dependencies" && \
-    curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - && \
+    curl --silent --location https://rpm.nodesource.com/setup_9.x | bash - && \
     yum -y install \
       nodejs \
       npm && \
